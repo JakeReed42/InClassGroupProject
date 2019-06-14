@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<EmployeeAvailability>
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+
+<h2>SearchResult</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>EmployeeAvailabilityID</td>
+            <td>AvailabilityDay</td>
+            <td>EmployeeStartTime</td>
+            <td>EmployeeEndTime</td>
+            <td>EmployeeID</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (EmployeeAvailability eachEmployeeAvailability in Model)
+        {
+        <tr>
+            <td>@eachEmployeeAvailability.EmployeeAvailabilityID</td>
+            <td>@eachEmployeeAvailability.AvailabilityDay</td>
+            <td>@eachEmployeeAvailability.EmployeeStartTime</td>
+            <td>@eachEmployeeAvailability.EmployeeEndTime</td>
+            <td>@eachEmployeeAvailability.EmployeeID</td>
+            <td>@eachEmployeeAvailability.ApplicationUser.Firstname</td>
+
+
+        </tr>
+        }
+    </tbody>
+
+
+
+</table>

@@ -1,0 +1,34 @@
+﻿
+@model IEnumerable<Employee_HospitalRole>
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+
+<h2>SearchResult</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>Hospital Role Name</td>
+            <td>Employee Last Name</td>
+            <td>Employee First Name</td>
+           
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Employee_HospitalRole eachEmployee_HospitalRole in Model)
+        {
+            <tr>
+                <td>@eachEmployee_HospitalRole.HospitalRole.HospitalRoleName</td>
+                <td>@eachEmployee_HospitalRole.Employee.Lastname</td>
+                <td>@eachEmployee_HospitalRole.Employee.Firstname</td>              
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>

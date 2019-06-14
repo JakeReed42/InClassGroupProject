@@ -1,0 +1,41 @@
+﻿
+@*@{*@
+    @*ViewData["Title"] = "SearchEmployeeByRole";
+}
+
+<h2>SearchEmployeeByRole</h2>*@
+
+@model Employee_HospitalRole
+@*@{
+        ViewData["Title"] = "Employee_HospitalRole";
+    }*@
+
+
+
+@using (
+Html.BeginForm("SearchResult", "Employee_HospitalRole", FormMethod.Post)
+)
+{
+
+<h2>SearchEmployeeByRole</h2>
+
+    <table class=" table table-striped">
+
+        <tr>
+            <td>@Html.Label("Select Role (optional)")</td>
+            <td>@Html.DropDownList("HospitalRoleID", (SelectList)ViewBag.HospitalRoles, string.Empty)</td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" class="btn" value="Search" />
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+}

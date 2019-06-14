@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EmployeeAvailability>
+@{
+    ViewData["Title"] = "All Availabilites";
+}
+
+<h2>GetAllAvailabilities</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+                <td>Employee First Name</td>
+                <td>Employee Last Name</td>
+                <td>Available Day of Week</td>
+                <td>Available Start Time</td>
+                <td>Available End Time</td>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (EmployeeAvailability eachAvailability in Model)
+        {
+        <tr>
+                <td>@eachAvailability.ApplicationUser.Firstname</td>
+                <td>@eachAvailability.ApplicationUser.Lastname</td>
+                <td>@eachAvailability.AvailabilityDay</td>
+                <td>@eachAvailability.EmployeeStartTime</td>
+                <td>@eachAvailability.EmployeeEndTime</td>
+        </tr>
+        }
+    </tbody>
+</table>

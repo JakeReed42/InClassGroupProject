@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Office>
+
+@{
+    ViewData["Title"] = "GetAllOffices";
+}
+
+<h2>Get All Offices</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <td>Office ID</td>
+        <td>Office Name</td>
+        <td>Office Address</td>
+        <td>Office Phone</td>
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Office eachOffice in Model)
+        {
+            <tr>
+                <td>@eachOffice.OfficeID</td>
+                <td>@eachOffice.OfficeName</td>
+                <td>@eachOffice.OfficeAddress</td>
+                <td>@eachOffice.OfficePhoneNumber</td>
+            </tr>
+
+        }
+        
+    </tbody>
+
+</table>
+
+<a class="btn btn-primary" asp-action="AddOffice" asp-controller="ManualOffice"> Add Office</a>

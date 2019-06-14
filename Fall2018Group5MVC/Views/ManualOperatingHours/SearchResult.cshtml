@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OperatingHour>
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+
+<h2>SearchResult</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>Office Name</td>
+            <td>Day of the Week</td>
+            <td>Office Opens</td>
+            <td>Office Closes</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (OperatingHour eachOperatingHour in Model)
+        {
+        <tr>
+            <td>@eachOperatingHour.Office.OfficeName</td>
+            <td>@eachOperatingHour.OperatingDay</td>
+            <td>@eachOperatingHour.OperatingStartTime</td>
+            <td>@eachOperatingHour.OperatingEndTime</td>
+
+        </tr>
+        }
+    </tbody>
+
+
+
+</table>
+

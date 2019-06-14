@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "SelectRequest";
+}
+
+
+@model Request
+
+@using (
+Html.BeginForm("SendRequest", "Request", FormMethod.Post)
+)
+{
+<h2>SelectRequest</h2>
+
+@Html.Label("Select Request Type")
+@Html.DropDownList("RequestTypeID", (SelectList)ViewBag.RequestType, string.Empty)
+
+
+    <input type="submit" class="btn btn-default" value="Confirm" />
+}

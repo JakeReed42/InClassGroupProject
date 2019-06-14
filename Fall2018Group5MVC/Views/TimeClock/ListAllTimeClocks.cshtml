@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TimeClock>
+@{
+    ViewData["Title"] = "ListAllTimeClocks";
+}
+
+<h2>ListAllTimeClocks</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Employee ID</td>
+            <td>Employee First Name</td>
+            <td>Employee Last Name</td>
+            <td>Time Clock ID</td>
+            <td>Time IN </td>
+            <td>Time OUT</td>
+            <td></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (TimeClock eachTimeClock in Model)
+        {
+        <tr>
+            <td>@eachTimeClock.EmployeeID</td>
+            <td>@eachTimeClock.Employee.Firstname</td>
+            <td>@eachTimeClock.Employee.Lastname</td>
+            <td>@eachTimeClock.TimeClockID</td>
+            <td>@eachTimeClock.TimeClockIn</td>
+            <td>@eachTimeClock.TimeClockOut</td>
+
+
+            <td>
+
+                <a class="btn btn-primary" asp-action="AddClockInstance" asp-controller="TimeClockController" asp-route-id="@eachTimeClock.TimeClockID"> IN / OUT </a>
+
+
+            </td>
+        </tr>
+
+        }
+
+    </tbody>
+
+</table>
